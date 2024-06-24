@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import DataTable from './DataTable';
-import Navbar from './Navbar';
+import DataTable from './Display/DataTable';
+import Navbar from './NavBar/Navbar';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

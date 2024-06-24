@@ -1,10 +1,10 @@
 import React, { useEffect,useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DataRow from './DataRow';
-import './App.css';
-import AddUserForm from './AddUserForm';
+import '../App.css';
+import AddUserForm from '../Add/AddUserForm';
 import axios from "axios";
-import UpdatePlayerForm from './UpdateUserform';
+import UpdatePlayerForm from '../Edit/UpdateUserform';
 
 
 
