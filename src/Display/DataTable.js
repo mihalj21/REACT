@@ -7,7 +7,7 @@ import AddUserForm from '../Add/AddUserForm';
 import UpdatePlayerForm from '../Edit/UpdateUserform';
 import Button from '@mui/material/Button';
 import FilterForm from '../Filter/Filter';
-import FilterIcon from '@mui/icons-material/Filter';
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 const DataTable = () => {
   const [data, setData] = useState([]);
@@ -60,7 +60,7 @@ const DataTable = () => {
       const response = await axios.put(`http://localhost:5196/Footballplayer/${updatedPlayer.id}`, updatedPlayer);
       console.log('Player updated successfully:', response.data);
       fetchData();
-      setShowModal(false); // Close modal after successful update
+      setShowModal(false);
     } catch (error) {
       console.error('Error updating player:', error);
     }
@@ -87,8 +87,8 @@ const closeFilterForm = () => {
       <div className="table-container">
         
         <div className="addButton"> 
-        <Button variant="contained" color="success" onClick={toggleFilterForm} >
-            <h1><FilterIcon /> </h1>
+        <Button variant="contained"  onClick={toggleFilterForm}>
+        <h1><FilterListIcon /></h1>
         </Button>
             <Button variant="contained" color="success" onClick={openAddUserForm}>
             <h1>+</h1>
