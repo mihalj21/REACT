@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+
 
 const DataRow = ({ row, onDelete, onEdit }) => {
 
@@ -19,8 +21,8 @@ const DataRow = ({ row, onDelete, onEdit }) => {
             ))}
 
             <td>
-                <button onClick={handleEdit}>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
+                <Button onClick={handleEdit}>Edit</Button>
+                <Button onClick={handleDelete} variant="outlined" color="error">Delete</Button>
             </td>
         </tr>
     );

@@ -10,6 +10,7 @@ import UpdatePlayerForm from '../Edit/UpdateUserform';
 
 
 
+
 const DataTable = () => {
   
   const [data, setData] = useState([]);
@@ -93,7 +94,7 @@ const handleUpdatePlayer = (updatedPlayer) => {
                       <td>Position</td>
                       <td>Club</td>
                       <td>Actions</td>
-
+                      
                   </tr>
               </thead>
               <tbody>

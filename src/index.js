@@ -5,16 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import DataTable from './Display/DataTable';
 import Navbar from './NavBar/Navbar';
+import FilterForm from './Filter/Filter';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
+  
   <React.StrictMode>
 <Navbar></Navbar>
     <App />
     <DataTable/>
+    <FilterForm></FilterForm>
   </React.StrictMode>
 );
 
