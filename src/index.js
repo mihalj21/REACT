@@ -17,7 +17,7 @@ root.render(
 <Navbar></Navbar>
     <App />
     <DataTable/>
-    <FilterForm></FilterForm>
+
   </React.StrictMode>
 );
 

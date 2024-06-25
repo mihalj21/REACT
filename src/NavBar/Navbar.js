@@ -3,6 +3,8 @@ import '../App.css';
 import Button from '@mui/material/Button';
 
 
+
+
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,9 +21,6 @@ function Navbar() {
             </a>
           </li>
         </ul>
-        <Button variant="contained" color="success">
-        <h1>+</h1>
-      </Button>
       </div>
     </nav>
   );

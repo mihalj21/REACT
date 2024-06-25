@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../App.css';
+import Button from '@mui/material/Button';
 
 
-const FilterForm = () => {
+const FilterForm = ({closeFilterForm}) => {
 
     const [players, setPlayers] = useState([]);
     const [nameId, setNameId] = useState('');
@@ -14,6 +15,7 @@ const FilterForm = () => {
     const [sortOrder, setSortOrder] = useState('asc');
     const [pageNumber, setPageNumber] = useState(1);
     const [pageSize, setPageSize] = useState(10);
+   
   
     useEffect(() => {
       fetchPlayers();
@@ -23,10 +25,10 @@ const FilterForm = () => {
       try {
         const response = await axios.get('http://localhost:5196/players', {
           params: {
-            nameId: nameId || undefined,
-            age: age || undefined,
-            position: position || undefined,
-            clubId: clubId || undefined,
+            nameId: nameId ,
+            age: age ,
+            position: position ,
+            clubId: clubId,
             sortBy,
             sortOrder,
             pageNumber,
@@ -34,21 +36,23 @@ const FilterForm = () => {
           },
         });
         setPlayers(response.data);
+        console.log("matko",response.clubId);
       } catch (error) {
         console.error('Error fetching players:', error);
       }
     };
   
-    const handleFilterSubmit = (e) => {
-      e.preventDefault();
-      setPageNumber(1); // Reset to first page when filtering
+   
+
+    const close = () =>{
+        closeFilterForm();
     };
   
     return (
       <div className="filter-form-container">
         <h2>Players List</h2>
   
-        <form onSubmit={handleFilterSubmit} className="filter-form" >
+        <form  className="filter-form" >
           <label>
             Name Id:
             <input type="text" value={nameId} onChange={(e) => setNameId(e.target.value)} />
@@ -90,8 +94,7 @@ const FilterForm = () => {
             </select>
           </label>
           <br />
-  
-          <button type="submit">Apply Filters</button>
+          <Button onClick={close} variant="outlined" color="error">Close</Button>
         </form>
   
         <div className="table-container">

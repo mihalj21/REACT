@@ -15,7 +15,6 @@ const UpdatePlayerForm = ({ show, handleClose, player, onUpdate }) => {
             try {
                 const response = await axios.get("http://localhost:5196/Footballplayer/GetAllClubs");
                 setClubs(response.data);
-                console.log(clubs);
             } catch (error) {
                 console.error("Error fetching clubs:", error);
             }

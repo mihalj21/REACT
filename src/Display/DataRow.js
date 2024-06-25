@@ -21,7 +21,7 @@ const DataRow = ({ row, onDelete, onEdit }) => {
             ))}
 
             <td>
-                <Button onClick={handleEdit}>Edit</Button>
+                <Button onClick={handleEdit} variant="outlined">Edit</Button>
                 <Button onClick={handleDelete} variant="outlined" color="error">Delete</Button>
             </td>
         </tr>

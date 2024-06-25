@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import Button from '@mui/material/Button';
 
-const AddUserForm = ({ handleAddRow }) => {
+const AddUserForm = ({ handleAddRow , closeAddUserForm}) => {
     const [name, setName] = useState('');
     const [age, setAge] = useState('');
     const [position, setPosition] = useState('');
@@ -33,7 +34,7 @@ const AddUserForm = ({ handleAddRow }) => {
         };
 console.log(newUser);
         handleAddRow(newUser);
-
+        closeAddUserForm();
         setName('');
         setAge('');
         setPosition('');
@@ -51,7 +52,7 @@ console.log(newUser);
     return (
         <div className="add-user-container">
             <h2>Add a New Player</h2>
-            <form id="addUserForm" onSubmit={handleSubmit}>
+            <form id="addUserForm">
                 <label htmlFor="name">FullName:</label>
                 <input
                     type="text"
@@ -101,8 +102,9 @@ console.log(newUser);
                     required
                 /><br /><br />
                 <br />
-
-                <button type="submit">Add User</button>
+                <Button   onClick={handleSubmit}  variant="outlined">Add Player</Button>
+                <Button   onClick={closeAddUserForm} variant="outlined" color="error">Close</Button>
+                
             </form>
         </div>
     );
